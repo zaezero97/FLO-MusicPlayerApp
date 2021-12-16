@@ -10,10 +10,13 @@
 		9996B61B8F5B6FBD8028F742 /* Pods_FLO_MusicPlayerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38CA7B71254467C5A64187B /* Pods_FLO_MusicPlayerApp.framework */; };
 		AE8D89A8276AFB60005996D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89A7276AFB60005996D9 /* AppDelegate.swift */; };
 		AE8D89AA276AFB60005996D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89A9276AFB60005996D9 /* SceneDelegate.swift */; };
-		AE8D89AC276AFB60005996D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89AB276AFB60005996D9 /* ViewController.swift */; };
-		AE8D89AF276AFB60005996D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8D89AD276AFB60005996D9 /* Main.storyboard */; };
 		AE8D89B1276AFB61005996D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE8D89B0276AFB61005996D9 /* Assets.xcassets */; };
 		AE8D89B4276AFB61005996D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8D89B2276AFB61005996D9 /* LaunchScreen.storyboard */; };
+		AE8D89C6276B02B4005996D9 /* MusicPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89C5276B02B4005996D9 /* MusicPlayViewController.swift */; };
+		AE8D89C8276B02E4005996D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8D89C7276B02E4005996D9 /* Main.storyboard */; };
+		AE8D89CB276B135C005996D9 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89CA276B135C005996D9 /* Music.swift */; };
+		AE8D89CD276B1546005996D9 /* MusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89CC276B1546005996D9 /* MusicViewModel.swift */; };
+		AE8D89D0276B2133005996D9 /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89CF276B2133005996D9 /* URLRequest+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,11 +25,14 @@
 		AE8D89A4276AFB60005996D9 /* FLO-MusicPlayerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FLO-MusicPlayerApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE8D89A7276AFB60005996D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE8D89A9276AFB60005996D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AE8D89AB276AFB60005996D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AE8D89AE276AFB60005996D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE8D89B0276AFB61005996D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE8D89B3276AFB61005996D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE8D89B5276AFB61005996D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE8D89C5276B02B4005996D9 /* MusicPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayViewController.swift; sourceTree = "<group>"; };
+		AE8D89C7276B02E4005996D9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AE8D89CA276B135C005996D9 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		AE8D89CC276B1546005996D9 /* MusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewModel.swift; sourceTree = "<group>"; };
+		AE8D89CF276B2133005996D9 /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
 		F5AC613808CEB25E22E487D4 /* Pods-FLO-MusicPlayerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLO-MusicPlayerApp.debug.xcconfig"; path = "Target Support Files/Pods-FLO-MusicPlayerApp/Pods-FLO-MusicPlayerApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,23 +86,66 @@
 		AE8D89A6276AFB60005996D9 /* FLO-MusicPlayerApp */ = {
 			isa = PBXGroup;
 			children = (
-				AE8D89BD276AFE99005996D9 /* Resources */,
+				AE8D89CE276B2122005996D9 /* Extensions */,
+				AE8D89C9276B12EF005996D9 /* APIs */,
+				AE8D89C4276B028D005996D9 /* ViewModels */,
+				AE8D89C3276B0289005996D9 /* Models */,
+				AE8D89C2276B0284005996D9 /* Views */,
+				AE8D89C0276B023C005996D9 /* ViewControllers */,
 				AE8D89A7276AFB60005996D9 /* AppDelegate.swift */,
 				AE8D89A9276AFB60005996D9 /* SceneDelegate.swift */,
-				AE8D89AB276AFB60005996D9 /* ViewController.swift */,
-				AE8D89AD276AFB60005996D9 /* Main.storyboard */,
 				AE8D89B0276AFB61005996D9 /* Assets.xcassets */,
 				AE8D89B2276AFB61005996D9 /* LaunchScreen.storyboard */,
 				AE8D89B5276AFB61005996D9 /* Info.plist */,
+				AE8D89C7276B02E4005996D9 /* Main.storyboard */,
 			);
 			path = "FLO-MusicPlayerApp";
 			sourceTree = "<group>";
 		};
-		AE8D89BD276AFE99005996D9 /* Resources */ = {
+		AE8D89C0276B023C005996D9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AE8D89C5276B02B4005996D9 /* MusicPlayViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AE8D89C2276B0284005996D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Resources;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AE8D89C3276B0289005996D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AE8D89CA276B135C005996D9 /* Music.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AE8D89C4276B028D005996D9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AE8D89CC276B1546005996D9 /* MusicViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AE8D89C9276B12EF005996D9 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		AE8D89CE276B2122005996D9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE8D89CF276B2133005996D9 /* URLRequest+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,9 +208,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8D89C8276B02E4005996D9 /* Main.storyboard in Resources */,
 				AE8D89B4276AFB61005996D9 /* LaunchScreen.storyboard in Resources */,
 				AE8D89B1276AFB61005996D9 /* Assets.xcassets in Resources */,
-				AE8D89AF276AFB60005996D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,23 +263,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE8D89AC276AFB60005996D9 /* ViewController.swift in Sources */,
+				AE8D89CD276B1546005996D9 /* MusicViewModel.swift in Sources */,
 				AE8D89A8276AFB60005996D9 /* AppDelegate.swift in Sources */,
+				AE8D89C6276B02B4005996D9 /* MusicPlayViewController.swift in Sources */,
+				AE8D89D0276B2133005996D9 /* URLRequest+Extensions.swift in Sources */,
 				AE8D89AA276AFB60005996D9 /* SceneDelegate.swift in Sources */,
+				AE8D89CB276B135C005996D9 /* Music.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AE8D89AD276AFB60005996D9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AE8D89AE276AFB60005996D9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AE8D89B2276AFB61005996D9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
