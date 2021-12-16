@@ -48,7 +48,6 @@
 				F5AC613808CEB25E22E487D4 /* Pods-FLO-MusicPlayerApp.debug.xcconfig */,
 				93EBA5C5C2E91DD32B365EE3 /* Pods-FLO-MusicPlayerApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +80,7 @@
 		AE8D89A6276AFB60005996D9 /* FLO-MusicPlayerApp */ = {
 			isa = PBXGroup;
 			children = (
+				AE8D89BD276AFE99005996D9 /* Resources */,
 				AE8D89A7276AFB60005996D9 /* AppDelegate.swift */,
 				AE8D89A9276AFB60005996D9 /* SceneDelegate.swift */,
 				AE8D89AB276AFB60005996D9 /* ViewController.swift */,
@@ -90,6 +90,13 @@
 				AE8D89B5276AFB61005996D9 /* Info.plist */,
 			);
 			path = "FLO-MusicPlayerApp";
+			sourceTree = "<group>";
+		};
+		AE8D89BD276AFE99005996D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +374,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,6 +404,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
