@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9996B61B8F5B6FBD8028F742 /* Pods_FLO_MusicPlayerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38CA7B71254467C5A64187B /* Pods_FLO_MusicPlayerApp.framework */; };
 		AE8D89A8276AFB60005996D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89A7276AFB60005996D9 /* AppDelegate.swift */; };
 		AE8D89AA276AFB60005996D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89A9276AFB60005996D9 /* SceneDelegate.swift */; };
 		AE8D89AC276AFB60005996D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89AB276AFB60005996D9 /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93EBA5C5C2E91DD32B365EE3 /* Pods-FLO-MusicPlayerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLO-MusicPlayerApp.release.xcconfig"; path = "Target Support Files/Pods-FLO-MusicPlayerApp/Pods-FLO-MusicPlayerApp.release.xcconfig"; sourceTree = "<group>"; };
+		A38CA7B71254467C5A64187B /* Pods_FLO_MusicPlayerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLO_MusicPlayerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE8D89A4276AFB60005996D9 /* FLO-MusicPlayerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FLO-MusicPlayerApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE8D89A7276AFB60005996D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE8D89A9276AFB60005996D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		AE8D89B0276AFB61005996D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE8D89B3276AFB61005996D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE8D89B5276AFB61005996D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5AC613808CEB25E22E487D4 /* Pods-FLO-MusicPlayerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLO-MusicPlayerApp.debug.xcconfig"; path = "Target Support Files/Pods-FLO-MusicPlayerApp/Pods-FLO-MusicPlayerApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9996B61B8F5B6FBD8028F742 /* Pods_FLO_MusicPlayerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EEBCD9825A4F243BDE755AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F5AC613808CEB25E22E487D4 /* Pods-FLO-MusicPlayerApp.debug.xcconfig */,
+				93EBA5C5C2E91DD32B365EE3 /* Pods-FLO-MusicPlayerApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		55E4D8C2B720E269D7DE2242 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A38CA7B71254467C5A64187B /* Pods_FLO_MusicPlayerApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AE8D899B276AFB60005996D9 = {
 			isa = PBXGroup;
 			children = (
 				AE8D89A6276AFB60005996D9 /* FLO-MusicPlayerApp */,
 				AE8D89A5276AFB60005996D9 /* Products */,
+				0EEBCD9825A4F243BDE755AE /* Pods */,
+				55E4D8C2B720E269D7DE2242 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE8D89B8276AFB61005996D9 /* Build configuration list for PBXNativeTarget "FLO-MusicPlayerApp" */;
 			buildPhases = (
+				DC28C555E6297C9D8084AADA /* [CP] Check Pods Manifest.lock */,
 				AE8D89A0276AFB60005996D9 /* Sources */,
 				AE8D89A1276AFB60005996D9 /* Frameworks */,
 				AE8D89A2276AFB60005996D9 /* Resources */,
+				40EAF1D9D24886D7F98A3134 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		40EAF1D9D24886D7F98A3134 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FLO-MusicPlayerApp/Pods-FLO-MusicPlayerApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FLO-MusicPlayerApp/Pods-FLO-MusicPlayerApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FLO-MusicPlayerApp/Pods-FLO-MusicPlayerApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC28C555E6297C9D8084AADA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FLO-MusicPlayerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AE8D89A0276AFB60005996D9 /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		AE8D89B9276AFB61005996D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5AC613808CEB25E22E487D4 /* Pods-FLO-MusicPlayerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +382,7 @@
 		};
 		AE8D89BA276AFB61005996D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93EBA5C5C2E91DD32B365EE3 /* Pods-FLO-MusicPlayerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

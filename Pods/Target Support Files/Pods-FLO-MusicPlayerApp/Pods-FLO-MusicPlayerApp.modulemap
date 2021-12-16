@@ -1,0 +1,6 @@
+framework module Pods_FLO_MusicPlayerApp {
+  umbrella header "Pods-FLO-MusicPlayerApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
