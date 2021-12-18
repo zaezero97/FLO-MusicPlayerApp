@@ -9,66 +9,66 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class MusicViewModel {
+protocol MusicViewModelType {
     
-    let musicSubject = BehaviorRelay<[Music]>(value: [])
+    associatedtype Input
+    associatedtype Output
     
-    var title: Observable<String> {
-        return self.musicSubject
-            .map { $0.last!.title }
-            .asObservable()
-    }
+    var input: Input { get }
+    var output: Output { get }
+    var disposeBag: DisposeBag { get set }
+    
+}
 
-    var singer: Observable<String> {
-        return musicSubject.asObservable()
-            .map{ $0.last!.singer }
-    }
-    
-    var image: Observable<UIImage?> {
-        return musicSubject.asObservable()
-            .flatMap { music -> Observable<(response: HTTPURLResponse, data: Data)> in
-                let url = URL(string: music.last!.image)
-                if url == nil {
-                    throw RxCocoaURLError.unknown
-                }
-                let request = URLRequest(url: url!)
-                return URLSession.shared.rx.response(request: request)
-            }.map { response,data -> UIImage? in
-                if 200 ..< 300 ~= response.statusCode {
-                    return UIImage(data: data)
-                } else {
-                    throw RxCocoaURLError.httpRequestFailed(response: response, data: data)
-                }
-            }
-    }
-    
-    var file: Observable<Data> {
-        return musicSubject.asObservable()
-            .flatMap { music -> Observable<(response: HTTPURLResponse, data: Data)> in
-                let url = URL(string: music.last!.image)
-                if url == nil {
-                    throw RxCocoaURLError.unknown
-                }
-                let request = URLRequest(url: url!)
-                return URLSession.shared.rx.response(request: request)
-            }.map { response,data -> Data in
-                if 200 ..< 300 ~= response.statusCode {
-                    return data
-                } else {
-                    throw RxCocoaURLError.httpRequestFailed(response: response, data: data)
-                }
-            }
-    }
-    
-    var duration: Observable<Int> {
-        return musicSubject.asObservable()
-            .map { $0.last!.duration }
-    }
-    
-    var lyrics: Observable<String> {
-        return musicSubject.asObservable()
-            .map { $0.last!.lyrics}
-    }
+class MusicViewModel: MusicViewModelType {
 
-   
+    struct Input {
+        let fetchMusic: AnyObserver<Void>
+    }
+    
+    struct Output {
+        let title: Driver<String>
+        let singer: Driver<String>
+        let lyrics: Driver<String>
+        let image: Driver<UIImage?>
+        let file: Driver<Data?>
+        let duration: Driver<Int>
+    }
+    
+    let input: Input
+    let output: Output
+    var disposeBag = DisposeBag()
+    
+    var music = PublishRelay<Music>()
+    
+    init() {
+        
+        let fetchMusic = PublishSubject<Void>()
+        
+        
+        let title = music.map{ $0.title }
+        let singer = music.map { $0.singer }
+        let lyrics = music.map { $0.lyrics }
+        let image = music.map { try! Data(contentsOf: URL(string: $0.image)!) }.map{ UIImage(data: $0)}
+        let file = music.map { try? Data(contentsOf: URL(string: $0.file)!) }
+        let duration = music.map{ $0.duration }
+        
+        self.output = Output(title: title.asDriver(onErrorJustReturn: ""), singer: singer.asDriver(onErrorJustReturn: ""), lyrics: lyrics.asDriver(onErrorJustReturn: ""), image: image.asDriver(onErrorJustReturn: UIImage()), file: file.asDriver(onErrorJustReturn: Data()), duration: duration.asDriver(onErrorJustReturn: 0))
+        self.input = Input(fetchMusic: fetchMusic.asObserver())
+        
+        
+        // input
+        fetchMusic.subscribe(onNext: {
+            FLOAPIService.fetchMusic(URL(string: "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-flo/song.json")!).subscribe(onNext: {
+                 [weak self] music in
+                self?.music.accept(music)
+            })
+        })
+        
+        
+        
+        
+        
+        
+    }
 }

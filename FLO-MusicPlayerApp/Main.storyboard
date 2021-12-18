@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,8 +21,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y43-iH-cun">
                                 <rect key="frame" x="0.0" y="88" width="414" height="676"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qb2-2y-MtS">
-                                        <rect key="frame" x="30" y="352" width="354" height="172.5"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="250" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qb2-2y-MtS">
+                                        <rect key="frame" x="30" y="352" width="354" height="152.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
@@ -29,7 +30,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music.mic.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Onj-gz-Gcf">
-                                        <rect key="frame" x="30" y="132.5" width="354" height="199"/>
+                                        <rect key="frame" x="40" y="132.5" width="334" height="199"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="MKf-bZ-lFf"/>
                                         </constraints>
@@ -41,7 +42,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0V4-0U-YQt">
-                                        <rect key="frame" x="10" y="595.5" width="394" height="4"/>
+                                        <rect key="frame" x="10" y="575.5" width="394" height="4"/>
                                     </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="곡 제목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgl-EZ-3T9">
                                         <rect key="frame" x="0.0" y="51" width="414" height="20.5"/>
@@ -50,48 +51,51 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="9F4-vR-SH6">
-                                        <rect key="frame" x="10" y="635" width="394" height="31"/>
+                                        <rect key="frame" x="10" y="615" width="394" height="51"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hte-FI-np4">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="51"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="repeat" catalog="system" title=""/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bf0-mb-Im9">
-                                                <rect key="frame" x="81" y="0.0" width="70" height="31"/>
+                                                <rect key="frame" x="81" y="0.0" width="70" height="51"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="backward.end.fill" catalog="system" title=""/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qw0-BD-0El">
-                                                <rect key="frame" x="162" y="0.0" width="70" height="31"/>
+                                                <rect key="frame" x="162" y="0.0" width="70" height="51"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system" title=""/>
+                                                <buttonConfiguration key="configuration" style="plain" title="">
+                                                    <imageReference key="image" image="play.fill" catalog="system" symbolScale="default"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="31"/>
+                                                </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0n3-jx-ibO">
-                                                <rect key="frame" x="243" y="0.0" width="70" height="31"/>
+                                                <rect key="frame" x="243" y="0.0" width="70" height="51"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="forward.end.fill" catalog="system" title=""/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJn-1R-rcV">
-                                                <rect key="frame" x="324" y="0.0" width="70" height="31"/>
+                                                <rect key="frame" x="324" y="0.0" width="70" height="51"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="shuffle" catalog="system" title=""/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbs-Am-xF0">
-                                        <rect key="frame" x="10" y="604.5" width="46" height="20.5"/>
+                                        <rect key="frame" x="10" y="584.5" width="46" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRU-u2-rVj">
-                                        <rect key="frame" x="143.5" y="544.5" width="44.5" height="31"/>
+                                        <rect key="frame" x="143.5" y="524.5" width="44.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title=""/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDS-nT-En9">
-                                        <rect key="frame" x="226.5" y="544.5" width="44" height="31"/>
+                                        <rect key="frame" x="226.5" y="524.5" width="44" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="nosign" catalog="system" title=""/>
                                     </button>
@@ -101,7 +105,7 @@
                                         <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system" title=""/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhl-Pw-8as">
-                                        <rect key="frame" x="361" y="604.5" width="43" height="20.5"/>
+                                        <rect key="frame" x="361" y="584.5" width="43" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -117,7 +121,7 @@
                                     <constraint firstItem="9F4-vR-SH6" firstAttribute="top" secondItem="pbs-Am-xF0" secondAttribute="bottom" constant="10" id="Dx8-Hb-aeF"/>
                                     <constraint firstAttribute="trailing" secondItem="9F4-vR-SH6" secondAttribute="trailing" constant="10" id="H2D-cd-CIa"/>
                                     <constraint firstItem="gDS-nT-En9" firstAttribute="top" secondItem="Qb2-2y-MtS" secondAttribute="bottom" constant="20" id="HH9-rw-qbe"/>
-                                    <constraint firstItem="Onj-gz-Gcf" firstAttribute="leading" secondItem="Y43-iH-cun" secondAttribute="leading" constant="30" id="KAB-Bn-BKX"/>
+                                    <constraint firstItem="Onj-gz-Gcf" firstAttribute="leading" secondItem="Y43-iH-cun" secondAttribute="leading" constant="40" id="KAB-Bn-BKX"/>
                                     <constraint firstItem="QRU-u2-rVj" firstAttribute="centerX" secondItem="Y43-iH-cun" secondAttribute="centerX" multiplier="0.8" id="Kkg-uN-3Pj"/>
                                     <constraint firstItem="Onj-gz-Gcf" firstAttribute="top" secondItem="jgC-Vp-TyD" secondAttribute="bottom" constant="20" id="LHj-rd-eyn"/>
                                     <constraint firstItem="pbs-Am-xF0" firstAttribute="top" secondItem="0V4-0U-YQt" secondAttribute="bottom" constant="5" id="Nsr-KB-opN"/>
@@ -131,7 +135,7 @@
                                     <constraint firstItem="Onj-gz-Gcf" firstAttribute="centerX" secondItem="Y43-iH-cun" secondAttribute="centerX" id="ZOs-ju-0BU"/>
                                     <constraint firstItem="QRU-u2-rVj" firstAttribute="top" secondItem="Qb2-2y-MtS" secondAttribute="bottom" constant="20" id="dnd-ai-HhS"/>
                                     <constraint firstItem="Cgl-EZ-3T9" firstAttribute="top" secondItem="viL-H0-wWQ" secondAttribute="bottom" constant="20" id="ecG-rB-HRV"/>
-                                    <constraint firstAttribute="trailing" secondItem="Onj-gz-Gcf" secondAttribute="trailing" constant="30" id="gu7-Z5-NNY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Onj-gz-Gcf" secondAttribute="trailing" constant="40" id="gu7-Z5-NNY"/>
                                     <constraint firstItem="9F4-vR-SH6" firstAttribute="centerX" secondItem="Y43-iH-cun" secondAttribute="centerX" id="jPs-YF-f9c"/>
                                     <constraint firstAttribute="trailing" secondItem="Cgl-EZ-3T9" secondAttribute="trailing" id="kJt-z6-pm2"/>
                                     <constraint firstItem="Qb2-2y-MtS" firstAttribute="top" secondItem="Onj-gz-Gcf" secondAttribute="bottom" constant="20" id="lD9-uw-Q7A"/>
@@ -148,7 +152,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sY2-eR-8io">
                                 <rect key="frame" x="0.0" y="764" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="인스타그램" id="x42-wV-04B"/>
+                                    <barButtonItem image="icons8-instagram-48.png" id="x42-wV-04B"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ZZP-YF-TAx"/>
                                     <barButtonItem title="유사곡" id="iFq-X1-6pm"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rtw-XX-0YV"/>
@@ -223,6 +227,7 @@
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="forward.end.fill" catalog="system" width="128" height="102"/>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="icons8-instagram-48.png" width="48" height="48"/>
         <image name="music.mic.circle.fill" catalog="system" width="128" height="121"/>
         <image name="music.note.list" catalog="system" width="128" height="115"/>
         <image name="nosign" catalog="system" width="128" height="121"/>

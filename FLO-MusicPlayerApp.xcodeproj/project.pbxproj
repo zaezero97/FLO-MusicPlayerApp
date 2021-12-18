@@ -17,6 +17,9 @@
 		AE8D89CB276B135C005996D9 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89CA276B135C005996D9 /* Music.swift */; };
 		AE8D89CD276B1546005996D9 /* MusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89CC276B1546005996D9 /* MusicViewModel.swift */; };
 		AE8D89D0276B2133005996D9 /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89CF276B2133005996D9 /* URLRequest+Extensions.swift */; };
+		AE900B64276C0D9600AABCEA /* icons8-instagram-48.png in Resources */ = {isa = PBXBuildFile; fileRef = AE900B63276C0D9600AABCEA /* icons8-instagram-48.png */; };
+		AE900B66276C620100AABCEA /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE900B65276C620100AABCEA /* APIService.swift */; };
+		AE900B6A276C826D00AABCEA /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE900B69276C826D00AABCEA /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		AE8D89CA276B135C005996D9 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		AE8D89CC276B1546005996D9 /* MusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewModel.swift; sourceTree = "<group>"; };
 		AE8D89CF276B2133005996D9 /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
+		AE900B63276C0D9600AABCEA /* icons8-instagram-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-instagram-48.png"; path = "../../../Downloads/icons8-instagram-48.png"; sourceTree = "<group>"; };
+		AE900B65276C620100AABCEA /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		AE900B69276C826D00AABCEA /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		F5AC613808CEB25E22E487D4 /* Pods-FLO-MusicPlayerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLO-MusicPlayerApp.debug.xcconfig"; path = "Target Support Files/Pods-FLO-MusicPlayerApp/Pods-FLO-MusicPlayerApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +74,7 @@
 		AE8D899B276AFB60005996D9 = {
 			isa = PBXGroup;
 			children = (
+				AE900B63276C0D9600AABCEA /* icons8-instagram-48.png */,
 				AE8D89A6276AFB60005996D9 /* FLO-MusicPlayerApp */,
 				AE8D89A5276AFB60005996D9 /* Products */,
 				0EEBCD9825A4F243BDE755AE /* Pods */,
@@ -86,6 +93,7 @@
 		AE8D89A6276AFB60005996D9 /* FLO-MusicPlayerApp */ = {
 			isa = PBXGroup;
 			children = (
+				AE900B67276C787300AABCEA /* Domain */,
 				AE8D89CE276B2122005996D9 /* Extensions */,
 				AE8D89C9276B12EF005996D9 /* APIs */,
 				AE8D89C4276B028D005996D9 /* ViewModels */,
@@ -120,7 +128,6 @@
 		AE8D89C3276B0289005996D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AE8D89CA276B135C005996D9 /* Music.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -136,6 +143,7 @@
 		AE8D89C9276B12EF005996D9 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
+				AE900B65276C620100AABCEA /* APIService.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -144,8 +152,25 @@
 			isa = PBXGroup;
 			children = (
 				AE8D89CF276B2133005996D9 /* URLRequest+Extensions.swift */,
+				AE900B69276C826D00AABCEA /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE900B67276C787300AABCEA /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AE900B68276C7A7000AABCEA /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AE900B68276C7A7000AABCEA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				AE8D89CA276B135C005996D9 /* Music.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +235,7 @@
 			files = (
 				AE8D89C8276B02E4005996D9 /* Main.storyboard in Resources */,
 				AE8D89B4276AFB61005996D9 /* LaunchScreen.storyboard in Resources */,
+				AE900B64276C0D9600AABCEA /* icons8-instagram-48.png in Resources */,
 				AE8D89B1276AFB61005996D9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,8 +290,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE8D89CD276B1546005996D9 /* MusicViewModel.swift in Sources */,
+				AE900B66276C620100AABCEA /* APIService.swift in Sources */,
 				AE8D89A8276AFB60005996D9 /* AppDelegate.swift in Sources */,
 				AE8D89C6276B02B4005996D9 /* MusicPlayViewController.swift in Sources */,
+				AE900B6A276C826D00AABCEA /* String+Extensions.swift in Sources */,
 				AE8D89D0276B2133005996D9 /* URLRequest+Extensions.swift in Sources */,
 				AE8D89AA276AFB60005996D9 /* SceneDelegate.swift in Sources */,
 				AE8D89CB276B135C005996D9 /* Music.swift in Sources */,

@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import AVFoundation
+
+
 class MusicPlayViewController: UIViewController {
     
     let disposeBag = DisposeBag()
@@ -19,60 +22,78 @@ class MusicPlayViewController: UIViewController {
     @IBOutlet weak var singerLabel: UILabel!
     @IBOutlet weak var musicImageView: UIImageView!
     @IBOutlet weak var lyricsTextView: UITextView!
-    let url = "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-flo/song.json"
+    var audioPlayer: AVAudioPlayer!
+    
     var musicViewModel = MusicViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchMusic()
+        self.bindingUI()
     }
     
-    private func fetchMusic() {
-        
-        guard let url = URL(string: url) else {
-            print("url string Error 😹!!")
-            return
-        }
-        
-        URLRequest.load(url)
-            .observe(on: MainScheduler.instance)
-            .subscribe(onNext: {
-                music in
-                
-                var musics = self.musicViewModel.musicSubject.value
-                musics.append(music)
-                self.musicViewModel.musicSubject.accept(musics)
-                self.bindingUI()
-                print(music)
-                
-            })
-            
-    }
     
     private func bindingUI() {
         
+        // input 💩!!!
+        self.musicViewModel.input.fetchMusic
+            .onNext(Void())
         
-        self.musicViewModel.title
-            .asDriver(onErrorJustReturn: "unknown")
+        // output 💩!!!
+        
+        self.musicViewModel.output.title
             .drive(self.titleLabel.rx.text)
             .disposed(by: disposeBag)
         
-        self.musicViewModel.singer
-            .asDriver(onErrorJustReturn: "unknown")
+        
+        self.musicViewModel.output.singer
             .drive(self.singerLabel.rx.text)
             .disposed(by: disposeBag)
         
-        self.musicViewModel.image
-            .asDriver(onErrorJustReturn: UIImage())
+        self.musicViewModel.output.lyrics
+            .drive(self.lyricsTextView.rx.text)
+            .disposed(by: disposeBag)
+        
+        
+        self.musicViewModel.output.image
             .drive(self.musicImageView.rx.image)
             .disposed(by: disposeBag)
         
-        self.musicViewModel.duration
-            .map { "\($0/60):\($0%60)"}
-            .asDriver(onErrorJustReturn: "00:00")
-            .drive(self.endTimeLabel.rx.text)
-            .disposed(by: disposeBag)
-        
+    
+//        self.musicViewModel.title
+//            .asDriver(onErrorJustReturn: "unknown")
+//            .drive(self.titleLabel.rx.text)
+//            .disposed(by: disposeBag)
+//
+//        self.musicViewModel.singer
+//            .asDriver(onErrorJustReturn: "unknown")
+//            .drive(self.singerLabel.rx.text)
+//            .disposed(by: disposeBag)
+//
+//        self.musicViewModel.image
+//            .asDriver(onErrorJustReturn: UIImage())
+//            .drive(self.musicImageView.rx.image)
+//            .disposed(by: disposeBag)
+//
+//        self.musicViewModel.duration
+//            .map { "\($0/60):\($0%60)"}
+//            .asDriver(onErrorJustReturn: "00:00")
+//            .drive(self.endTimeLabel.rx.text)
+//            .disposed(by: disposeBag)
+//
+//        self.musicViewModel.file
+//            .asDriver(onErrorJustReturn: Data())
+//            .drive(onNext: {
+//                data in
+//                self.playMusic(data)
+//            },onCompleted: nil,onDisposed: nil)
+    }
+    
+    private func playMusic(_ data: Data) {
+        do {
+            self.audioPlayer = try AVAudioPlayer(data: data)
+        } catch let error as NSError {
+            print("Audio Player Create Error 👻 ->>", error.localizedDescription)
+        }
+        audioPlayer.play()
     }
 }
