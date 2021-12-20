@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9996B61B8F5B6FBD8028F742 /* Pods_FLO_MusicPlayerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38CA7B71254467C5A64187B /* Pods_FLO_MusicPlayerApp.framework */; };
+		AE0CE9E627700E3B0016BD54 /* photo_photography_share_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0CE9E527700E3B0016BD54 /* photo_photography_share_icon.png */; };
+		AE0CE9E8277011BB0016BD54 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0CE9E7277011BB0016BD54 /* Int+Extensions.swift */; };
+		AE0CE9EC277060740016BD54 /* LyricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0CE9EB277060740016BD54 /* LyricsViewController.swift */; };
+		AE0CE9F0277060C40016BD54 /* LyricsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0CE9EF277060C40016BD54 /* LyricsViewController.storyboard */; };
 		AE8D89A8276AFB60005996D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89A7276AFB60005996D9 /* AppDelegate.swift */; };
 		AE8D89AA276AFB60005996D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89A9276AFB60005996D9 /* SceneDelegate.swift */; };
 		AE8D89B1276AFB61005996D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE8D89B0276AFB61005996D9 /* Assets.xcassets */; };
@@ -17,14 +21,19 @@
 		AE8D89CB276B135C005996D9 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89CA276B135C005996D9 /* Music.swift */; };
 		AE8D89CD276B1546005996D9 /* MusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89CC276B1546005996D9 /* MusicViewModel.swift */; };
 		AE8D89D0276B2133005996D9 /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D89CF276B2133005996D9 /* URLRequest+Extensions.swift */; };
-		AE900B64276C0D9600AABCEA /* icons8-instagram-48.png in Resources */ = {isa = PBXBuildFile; fileRef = AE900B63276C0D9600AABCEA /* icons8-instagram-48.png */; };
 		AE900B66276C620100AABCEA /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE900B65276C620100AABCEA /* APIService.swift */; };
 		AE900B6A276C826D00AABCEA /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE900B69276C826D00AABCEA /* String+Extensions.swift */; };
+		AEB50E1927700A1200136A5B /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB50E1727700A1200136A5B /* pause.png */; };
+		AEB50E1A27700A1200136A5B /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB50E1827700A1200136A5B /* play.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		93EBA5C5C2E91DD32B365EE3 /* Pods-FLO-MusicPlayerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLO-MusicPlayerApp.release.xcconfig"; path = "Target Support Files/Pods-FLO-MusicPlayerApp/Pods-FLO-MusicPlayerApp.release.xcconfig"; sourceTree = "<group>"; };
 		A38CA7B71254467C5A64187B /* Pods_FLO_MusicPlayerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLO_MusicPlayerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE0CE9E527700E3B0016BD54 /* photo_photography_share_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photo_photography_share_icon.png; path = ../../../../../Downloads/photo_photography_share_icon.png; sourceTree = "<group>"; };
+		AE0CE9E7277011BB0016BD54 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		AE0CE9EB277060740016BD54 /* LyricsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsViewController.swift; sourceTree = "<group>"; };
+		AE0CE9EF277060C40016BD54 /* LyricsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LyricsViewController.storyboard; sourceTree = "<group>"; };
 		AE8D89A4276AFB60005996D9 /* FLO-MusicPlayerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FLO-MusicPlayerApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE8D89A7276AFB60005996D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE8D89A9276AFB60005996D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,9 +45,10 @@
 		AE8D89CA276B135C005996D9 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		AE8D89CC276B1546005996D9 /* MusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewModel.swift; sourceTree = "<group>"; };
 		AE8D89CF276B2133005996D9 /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
-		AE900B63276C0D9600AABCEA /* icons8-instagram-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-instagram-48.png"; path = "../../../Downloads/icons8-instagram-48.png"; sourceTree = "<group>"; };
 		AE900B65276C620100AABCEA /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		AE900B69276C826D00AABCEA /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		AEB50E1727700A1200136A5B /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = ../../../../../Downloads/pause.png; sourceTree = "<group>"; };
+		AEB50E1827700A1200136A5B /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = ../../../../../Downloads/play.png; sourceTree = "<group>"; };
 		F5AC613808CEB25E22E487D4 /* Pods-FLO-MusicPlayerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLO-MusicPlayerApp.debug.xcconfig"; path = "Target Support Files/Pods-FLO-MusicPlayerApp/Pods-FLO-MusicPlayerApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,10 +81,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AE0CE9EE277060A70016BD54 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AE8D89C7276B02E4005996D9 /* Main.storyboard */,
+				AE0CE9EF277060C40016BD54 /* LyricsViewController.storyboard */,
+			);
+			path = storyboards;
+			sourceTree = "<group>";
+		};
 		AE8D899B276AFB60005996D9 = {
 			isa = PBXGroup;
 			children = (
-				AE900B63276C0D9600AABCEA /* icons8-instagram-48.png */,
 				AE8D89A6276AFB60005996D9 /* FLO-MusicPlayerApp */,
 				AE8D89A5276AFB60005996D9 /* Products */,
 				0EEBCD9825A4F243BDE755AE /* Pods */,
@@ -93,6 +111,8 @@
 		AE8D89A6276AFB60005996D9 /* FLO-MusicPlayerApp */ = {
 			isa = PBXGroup;
 			children = (
+				AE0CE9EE277060A70016BD54 /* storyboards */,
+				AEB50E122770098B00136A5B /* Resouce */,
 				AE900B67276C787300AABCEA /* Domain */,
 				AE8D89CE276B2122005996D9 /* Extensions */,
 				AE8D89C9276B12EF005996D9 /* APIs */,
@@ -105,7 +125,6 @@
 				AE8D89B0276AFB61005996D9 /* Assets.xcassets */,
 				AE8D89B2276AFB61005996D9 /* LaunchScreen.storyboard */,
 				AE8D89B5276AFB61005996D9 /* Info.plist */,
-				AE8D89C7276B02E4005996D9 /* Main.storyboard */,
 			);
 			path = "FLO-MusicPlayerApp";
 			sourceTree = "<group>";
@@ -114,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				AE8D89C5276B02B4005996D9 /* MusicPlayViewController.swift */,
+				AE0CE9EB277060740016BD54 /* LyricsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -153,6 +173,7 @@
 			children = (
 				AE8D89CF276B2133005996D9 /* URLRequest+Extensions.swift */,
 				AE900B69276C826D00AABCEA /* String+Extensions.swift */,
+				AE0CE9E7277011BB0016BD54 /* Int+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -171,6 +192,16 @@
 				AE8D89CA276B135C005996D9 /* Music.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		AEB50E122770098B00136A5B /* Resouce */ = {
+			isa = PBXGroup;
+			children = (
+				AE0CE9E527700E3B0016BD54 /* photo_photography_share_icon.png */,
+				AEB50E1727700A1200136A5B /* pause.png */,
+				AEB50E1827700A1200136A5B /* play.png */,
+			);
+			path = Resouce;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,10 +264,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE0CE9F0277060C40016BD54 /* LyricsViewController.storyboard in Resources */,
 				AE8D89C8276B02E4005996D9 /* Main.storyboard in Resources */,
 				AE8D89B4276AFB61005996D9 /* LaunchScreen.storyboard in Resources */,
-				AE900B64276C0D9600AABCEA /* icons8-instagram-48.png in Resources */,
 				AE8D89B1276AFB61005996D9 /* Assets.xcassets in Resources */,
+				AEB50E1927700A1200136A5B /* pause.png in Resources */,
+				AEB50E1A27700A1200136A5B /* play.png in Resources */,
+				AE0CE9E627700E3B0016BD54 /* photo_photography_share_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +329,9 @@
 				AE8D89C6276B02B4005996D9 /* MusicPlayViewController.swift in Sources */,
 				AE900B6A276C826D00AABCEA /* String+Extensions.swift in Sources */,
 				AE8D89D0276B2133005996D9 /* URLRequest+Extensions.swift in Sources */,
+				AE0CE9EC277060740016BD54 /* LyricsViewController.swift in Sources */,
 				AE8D89AA276AFB60005996D9 /* SceneDelegate.swift in Sources */,
+				AE0CE9E8277011BB0016BD54 /* Int+Extensions.swift in Sources */,
 				AE8D89CB276B135C005996D9 /* Music.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,7 +482,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -476,7 +512,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
