@@ -18,58 +18,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="09r-o5-zgZ">
-                                <rect key="frame" x="0.0" y="800" width="414" height="62"/>
+                                <rect key="frame" x="0.0" y="831" width="414" height="31"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsa-3P-hyY">
-                                        <rect key="frame" x="0.0" y="0.0" width="61.5" height="62"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="61.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="repeat" catalog="system" title="">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7j-ml-5r2">
-                                        <rect key="frame" x="70.5" y="0.0" width="61.5" height="62"/>
+                                        <rect key="frame" x="70.5" y="0.0" width="61.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="backward.end.fill" catalog="system" title="">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhW-fK-JeR">
-                                        <rect key="frame" x="141" y="0.0" width="61.5" height="62"/>
+                                        <rect key="frame" x="141" y="0.0" width="61.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="play.png" title="">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="clickPlayButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zKk-Xb-b7L"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Huo-Ia-D2R">
-                                        <rect key="frame" x="211.5" y="0.0" width="61.5" height="62"/>
+                                        <rect key="frame" x="211.5" y="0.0" width="61.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="forward.end.fill" catalog="system" title="">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qea-IJ-e8O">
-                                        <rect key="frame" x="282" y="0.0" width="61.5" height="62"/>
+                                        <rect key="frame" x="282" y="0.0" width="61.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="shuffle" catalog="system" title="">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mI-hF-3ow">
-                                        <rect key="frame" x="352.5" y="0.0" width="61.5" height="62"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="music.note.list" catalog="system" title="">
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                    </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KJO-4D-tqk">
+                                        <rect key="frame" x="352.5" y="0.0" width="63.5" height="31"/>
+                                    </switch>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="daF-Ae-UWo">
-                                <rect key="frame" x="0.0" y="122.5" width="414" height="677.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="daF-Ae-UWo">
+                                <rect key="frame" x="0.0" y="122.5" width="414" height="708.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LyricCell" textLabel="24c-6u-Kcq" style="IBUITableViewCellStyleDefault" id="AaM-M8-i1M">
@@ -144,7 +137,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lyricToggleButton" destination="KJO-4D-tqk" id="Ah4-6A-7ib"/>
                         <outlet property="lyricsTableView" destination="daF-Ae-UWo" id="ldU-a3-s2e"/>
+                        <outlet property="playButton" destination="lhW-fK-JeR" id="qYk-3K-f51"/>
                         <outlet property="singerLabel" destination="l8C-KR-9Ly" id="2zC-p2-qQT"/>
                         <outlet property="titleLabel" destination="RD8-DC-4so" id="DdX-cH-uls"/>
                     </connections>
@@ -157,7 +152,6 @@
     <resources>
         <image name="backward.end.fill" catalog="system" width="128" height="102"/>
         <image name="forward.end.fill" catalog="system" width="128" height="102"/>
-        <image name="music.note.list" catalog="system" width="128" height="115"/>
         <image name="play.png" width="48" height="48"/>
         <image name="repeat" catalog="system" width="128" height="98"/>
         <image name="shuffle" catalog="system" width="128" height="95"/>

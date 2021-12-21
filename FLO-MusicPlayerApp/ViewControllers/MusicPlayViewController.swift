@@ -17,16 +17,16 @@ class MusicPlayViewController: UIViewController {
     let disposeBag = DisposeBag()
     @IBOutlet weak var endTimeLabel: UILabel!
     @IBOutlet weak var curTimeLabel: UILabel!
-    @IBOutlet weak var progressView: UIProgressView! {
+    
+    @IBOutlet weak var progressSlider: UISlider!{
         didSet {
-            progressView.progress = 0
+            progressSlider.value = 0
+            
         }
     }
     @IBOutlet weak var lyricsTableView: UITableView! {
         didSet {
             lyricsTableView.isScrollEnabled = false
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(clicklyricsTableView))
-            lyricsTableView.addGestureRecognizer(tapGesture)
         }
     }
     @IBOutlet weak var titleLabel: UILabel!
@@ -39,7 +39,7 @@ class MusicPlayViewController: UIViewController {
         }
     }
     var audioPlayer: AVAudioPlayer?
-    var timer: Timer!
+    var timer: Timer?
     var musicViewModel = MusicViewModel()
     var lyrics = [(time:String, lyric: String)]()
     
@@ -49,7 +49,24 @@ class MusicPlayViewController: UIViewController {
         self.bindingUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        guard let audioPlayer = audioPlayer else {
+            return
+        }
+        
+        if audioPlayer.isPlaying {
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+            self.playButton.setImage(UIImage(named: "pause.png"), for: .normal)
+        } else {
+            self.playButton.setImage(UIImage(named: "play.png"), for: .normal)
+            timer?.invalidate()
+        }
+    }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        timer?.invalidate()
+    }
     private func bindingUI() {
         
         // input 💩!!!
@@ -59,11 +76,24 @@ class MusicPlayViewController: UIViewController {
         
         self.playButton.rx.tap
             .asDriver()
+            .filter({ [weak self] _ in
+                return self?.audioPlayer != nil
+            })
             .drive(onNext: {
                 self.playMusic()
             })
             .disposed(by: disposeBag)
         
+        self.lyricsTableView.rx.itemSelected
+            .bind(onNext: {
+                [weak self] _ in
+                self?.clicklyricsTableView()
+            }).disposed(by: disposeBag)
+        
+        self.progressSlider.rx.value
+            .bind { value in
+                self.curTimeLabel.text = Int(value).toMusicString()
+            }.disposed(by: disposeBag)
         
         // output 💩!!!
         
@@ -76,12 +106,14 @@ class MusicPlayViewController: UIViewController {
             .disposed(by: disposeBag)
         
         self.musicViewModel.output.lyrics
+            .do(onNext: {
+                self.lyrics = $0
+            })
             .drive(self.lyricsTableView.rx.items(cellIdentifier: "lyricCell")) {
                 index,item,cell in
+                cell.selectionStyle = .none
                 cell.textLabel?.text = item.lyric
                 cell.textLabel?.textColor = .gray
-                print("item!!! ->>",item)
-                self.lyrics.append(item)
             }.disposed(by: disposeBag)
         
         self.musicViewModel.output.image
@@ -96,12 +128,33 @@ class MusicPlayViewController: UIViewController {
             .drive(onNext: { [weak self] data in
                 guard let data = data else { return }
                 self?.audioPlayer = try? AVAudioPlayer(data: data)
+                self?.progressSlider.maximumValue = Float(self?.audioPlayer?.duration ?? 0)
                 self?.audioPlayer?.prepareToPlay()
                 self?.playButton.isEnabled = true
-            }, onCompleted: nil, onDisposed: nil)   
+            }, onCompleted: nil, onDisposed: nil)
+            .disposed(by: disposeBag)
         
+        
+        self.musicViewModel.output.curTime
+            .drive(self.curTimeLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        self.musicViewModel.output.progress
+                .drive(self.progressSlider.rx.value)
+                .disposed(by: disposeBag)
+        
+        self.musicViewModel.output.nextLine
+            .drive(onNext: {
+                [weak self] in
+                var indexPath = IndexPath(row: $0, section: 0)
+                self?.lyricsTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                var cell = self?.lyricsTableView.cellForRow(at: indexPath)
+                cell?.textLabel?.textColor = .black
+               
+            }).disposed(by: disposeBag)
+                
+                
     }
-    
     
     private func playMusic() {
         guard let audioPlayer = audioPlayer else {
@@ -109,46 +162,35 @@ class MusicPlayViewController: UIViewController {
         }
         if !audioPlayer.isPlaying {
             audioPlayer.play()
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateCurTimeLabel), userInfo: nil, repeats: true)
+            audioPlayer.currentTime = TimeInterval(progressSlider.value)
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
             self.playButton.setImage(UIImage(named: "pause.png"), for: .normal)
         } else {
             audioPlayer.pause()
-            timer.invalidate()
+            timer?.invalidate()
             self.playButton.setImage(UIImage(named: "play.png"), for: .normal)
         }
         
     }
     
-    @objc private func updateCurTimeLabel() {
+    @objc private func updateTime() {
         
-       
         guard let audioPlayer = audioPlayer else {
             return
         }
-        
-        let currentTime = round(audioPlayer.currentTime*10)/10
-        self.curTimeLabel.text = Int(audioPlayer.currentTime).toMusicString()
-        self.progressView.progress = Float(audioPlayer.currentTime / audioPlayer.duration)
-        
-        let index = lyrics.lastIndex { $0.time.tolyricTime() <= currentTime }
-        
-        if index != nil {
-            self.lyricsTableView.scrollToRow(at: IndexPath(row: Int(index!), section: 0), at: .top, animated: true)
-            let cell = self.lyricsTableView.cellForRow(at: IndexPath(row: Int(index!), section: 0))
-            cell?.textLabel?.textColor = .black
-        }
+        self.musicViewModel.input.updateTime.onNext(audioPlayer.currentTime)
     }
     
     @objc private func clicklyricsTableView() {
         let storyboard = UIStoryboard(name: "LyricsViewController", bundle: nil)
         let lyricsVC = storyboard.instantiateViewController(withIdentifier: "LyricsViewController") as! LyricsViewController
         lyricsVC.audioPlayer = audioPlayer
-        lyricsVC.lyrics = lyrics
         lyricsVC.musicViewModel = musicViewModel
         lyricsVC.modalPresentationStyle = .fullScreen
         self.present(lyricsVC, animated: true, completion: nil)
     }
     
+  
 }
 
 
