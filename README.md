@@ -1,4 +1,4 @@
-<h1 align="center">Programmers-ProJect-FLOMusicPlayerApp  👋</h1>
+<h1 align="left">Programmers-ProJect-FLOMusicPlayerApp  👋</h1>
 <p>
 </p>
 
@@ -10,7 +10,4 @@
 
 * Github: [@Zaezero](https://github.com/Zaezero)
 
-## Show your support
-
-Give a ⭐️ if this project helped you!
 
