@@ -31,7 +31,11 @@ class MusicPlayViewController: UIViewController {
     }
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var singerLabel: UILabel!
-    @IBOutlet weak var musicImageView: UIImageView!
+    @IBOutlet weak var musicImageView: UIImageView! {
+        didSet {
+            musicImageView.layer.cornerRadius = musicImageView.frame.width / 6
+        }
+    }
     @IBOutlet weak var playButton: UIButton! {
         didSet {
             self.playButton.setImage(UIImage(named: "play.png"), for: .normal)
